@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EDUBUDDY - Topic Explanation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #1a1a1a;
+        color: #ffffff;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #4caf50;
+      }
+      nav a {
+        color: #ffffff;
+        text-decoration: none;
+        margin-left: 20px;
+      }
+      h1,
+      h2 {
+        text-align: center;
+      }
+      .topic-explanation {
+        background-color: #2a2a2a;
+        padding: 30px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+      .topic-item {
+        margin-bottom: 20px;
+      }
+      .topic-item h3 {
+        color: #4caf50;
+      }
+      .explanation {
+        display: none;
+        background-color: #333;
+        padding: 15px;
+        border-radius: 4px;
+        margin-top: 10px;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">EDUBUDDY</div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="#">Services</a>
+          <a href="#">Request Help</a>
+        </nav>
+      </header>
+
+      <h1>Topic Explanations</h1>
+
+      <div class="topic-explanation">
+        <div class="topic-item">
+          <h3>Mathematics: Quadratic Equations</h3>
+          <p>
+            Understanding and solving quadratic equations is crucial in algebra.
+            Click to learn more about this topic.
+          </p>
+          <button onclick="toggleExplanation('math-quadratic')">
+            Show Explanation
+          </button>
+          <div id="math-quadratic" class="explanation">
+            <p>
+              A quadratic equation is a second-degree polynomial equation in a
+              single variable x. It takes the form:
+            </p>
+            <p>ax² + bx + c = 0</p>
+            <p>
+              where a ≠ 0 and a, b, and c are constants. The solutions to this
+              equation are called roots. These can be found using various
+              methods such as factoring, completing the square, or the quadratic
+              formula.
+            </p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <h3>Science: Cell Structure and Function</h3>
+          <p>
+            Explore the basic unit of life - the cell. Learn about its structure
+            and various functions.
+          </p>
+          <button onclick="toggleExplanation('science-cell')">
+            Show Explanation
+          </button>
+          <div id="science-cell" class="explanation">
+            <p>
+              Cells are the basic structural and functional units of all living
+              organisms. They come in two main types: prokaryotic (like
+              bacteria) and eukaryotic (like plant and animal cells).
+            </p>
+            <p>Key components of a eukaryotic cell include:</p>
+            <ul>
+              <li>Nucleus: Contains genetic material</li>
+              <li>
+                Cytoplasm: Gel-like substance where cellular processes occur
+              </li>
+              <li>Mitochondria: Powerhouse of the cell, produces energy</li>
+              <li>
+                Endoplasmic Reticulum: Involved in protein and lipid synthesis
+              </li>
+              <li>
+                Golgi Apparatus: Modifies, packages, and distributes molecules
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic-item">
+          <h3>English: Literary Devices</h3>
+          <p>
+            Discover the tools authors use to create meaning and evoke emotion
+            in their writing.
+          </p>
+          <button onclick="toggleExplanation('english-literary')">
+            Show Explanation
+          </button>
+          <div id="english-literary" class="explanation">
+            <p>
+              Literary devices are techniques used by writers to create a
+              pointed effect in their writing and to help readers understand
+              their stories better. Some common literary devices include:
+            </p>
+            <ul>
+              <li>Metaphor: A comparison between two unlike things</li>
+              <li>Simile: A comparison using "like" or "as"</li>
+              <li>
+                Personification: Giving human characteristics to non-human
+                things
+              </li>
+              <li>
+                Alliteration: Repetition of consonant sounds at the beginning of
+                words
+              </li>
+              <li>Irony: A contrast between expectation and reality</li>
+            </ul>
+            <p>
+              Understanding these devices can greatly enhance your appreciation
+              and analysis of literature.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleExplanation(topicId) {
+        const explanation = document.getElementById(topicId);
+        const button = explanation.previousElementSibling;
+        if (
+          explanation.style.display === "none" ||
+          explanation.style.display === ""
+        ) {
+          explanation.style.display = "block";
+          button.textContent = "Hide Explanation";
+        } else {
+          explanation.style.display = "none";
+          button.textContent = "Show Explanation";
+        }
+      }
+    </script>
+  </body>
+</html>

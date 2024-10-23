@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EDUBUDDY - Your Academic Success Partner</title>
+    <style>
+      :root {
+        --bg-color: #1a1a1a;
+        --text-color: #ffffff;
+        --accent-color: #4caf50;
+        --secondary-bg: #2a2a2a;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url("Edubuddy1_enhanced.jpg"), #000;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        background-color: var(--secondary-bg);
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--accent-color);
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-links li {
+        margin-left: 1.5rem;
+      }
+
+      .nav-links a {
+        color: var(--text-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent-color);
+      }
+
+      a:link,
+      a:visited {
+        color: white;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-image: url("/placeholder.svg?height=1080&width=1920&text=Dedsec+Background");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--accent-color);
+        color: var(--bg-color);
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #4caf50;
+      }
+
+      section {
+        padding: 4rem 0;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+      }
+
+      .about-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .about-item {
+        flex-basis: calc(33.333% - 2rem);
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .about-item i {
+        font-size: 3rem;
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background-color: var(--secondary-bg);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .service-details {
+        padding: 1.5rem;
+      }
+
+      .service-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        text-decoration: underline;
+      }
+
+      .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: none;
+        background-color: var(--secondary-bg);
+        color: var(--text-color);
+        border-radius: 5px;
+      }
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        background-color: #2a2a2a;
+        border: none;
+        border-bottom: 2px solid #2a2a2a;
+        color: #ffffff;
+        font-size: 1em;
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 150px;
+      }
+
+      footer {
+        background-color: var(--secondary-bg);
+        text-align: center;
+        padding: 2rem 0;
+      }
+
+      .social-links {
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        color: var(--text-color);
+        font-size: 1.5rem;
+        margin: 0 0.5rem;
+        transition: color 0.3s ease;
+      }
+
+      .social-links a:hover {
+        color: var(--accent-color);
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .about-item {
+          flex-basis: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <div class="logo">EDUBUDDY</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#request">Request Help</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h1>Your Academic Success Partner</h1>
+          <p>
+            Get help with your homework, practical work, and understand
+            difficult topics
+          </p>
+          <a href="login-page.html" class="btn">Request Help Now</a>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="container">
+          <h2>Our Services</h2>
+          <div class="service-grid">
+            <div class="service-card">
+              <div class="service-details">
+                <a href="homework-help.html"
+                  ><h3 class="service-title">Homework Help</h3></a
+                >
+                <p>
+                  Get assistance with your daily homework assignments across
+                  various subjects.
+                </p>
+              </div>
+            </div>
+            <div class="service-card">
+              <div class="service-details">
+                <a href="practical-assignment.html"
+                  ><h3 class="service-title">Practical Work</h3></a
+                >
+                <p>
+                  Receive guidance on laboratory experiments, projects, and
+                  hands-on assignments.
+                </p>
+              </div>
+            </div>
+            <div class="service-card">
+              <div class="service-details">
+                <a href="topic-explanation.html"
+                  ><h3 class="service-title">Topic Explanations</h3></a
+                >
+                <p>
+                  Request detailed explanations on specific topics you find
+                  challenging.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="request">
+        <div class="container">
+          <h2>Request Academic Assistance</h2>
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your SRM Mail"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="Enter the subject"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="request-type">Request Type</label>
+              <select id="request-type" name="request-type" required>
+                <option value="">Select request type</option>
+                <option value="homework">Homework Help</option>
+                <option value="practical">Practical Work</option>
+                <option value="topic">Topic Explanation</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea
+                id="description"
+                name="description"
+                placeholder="Describe your request in detail"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn">Submit Request</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>EDUBUDDY &copy; 2024 | Your Trusted Academic Assistant</p>
+      </div>
+    </footer>
+
+  </body>
+</html>
